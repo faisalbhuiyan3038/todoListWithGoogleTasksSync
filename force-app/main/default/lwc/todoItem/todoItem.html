@@ -4,12 +4,14 @@
     <div class="slds-box">
         <lightning-layout>
             <lightning-layout-item size="6">
-                <p>{todoItem}</p>
+                <div class="slds-text-heading_medium">
+                    <span class={completeClass}>{todoValue}</span>
+                </div>
             </lightning-layout-item>
             <lightning-layout-item size="6">
                 <lightning-button-group>
-                    <lightning-button label="" icon-name="utility:check"></lightning-button>
-                    <lightning-button label="" variant="destructive" icon-name="utility:delete"></lightning-button>
+                    <lightning-button label="" icon-name="utility:check" onclick={handleComplete}></lightning-button>
+                    <lightning-button label="" variant="destructive" icon-name="utility:delete" onclick={handleDelete}></lightning-button>
                 </lightning-button-group>
             </lightning-layout-item>
         </lightning-layout>

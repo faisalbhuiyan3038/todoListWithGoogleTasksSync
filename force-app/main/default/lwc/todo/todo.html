@@ -13,7 +13,7 @@
         </p>
         <div slot="footer">
             <template for:each={todoList} for:item="todo">
-                <c-todo-item key={todo.id} todo-item={todo.value} class="slds-p-around_small"></c-todo-item>
+                <c-todo-item key={todo.id} todo-id={todo.id} todo-value={todo.value} todo-status={todo.status} class="slds-var-p-around_small" ondelete={deleteHandler}></c-todo-item>
             </template>
         </div>
     </lightning-card>

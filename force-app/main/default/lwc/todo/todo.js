@@ -5,7 +5,8 @@ export default class Todo extends LightningElement {
     todoList=[
         {
             id:1,
-            value: 'test'
+            value: 'test',
+            status: true
         }
     ];
 
@@ -20,5 +21,10 @@ export default class Todo extends LightningElement {
             value: this.todoValue
         }
         this.todoList = [...this.todoList, newTodo];
+    }
+
+    deleteHandler(event){
+        console.log('deleteHandler', event.detail);
+        this.todoList = this.todoList.filter(todo => todo.id !== event.detail);
     }
 }
