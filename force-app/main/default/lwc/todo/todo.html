@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  title="Todo List">
+        <!-- <lightning-button label="New" slot="actions"></lightning-button> -->
+        <p class="slds-var-p-horizontal_small">
+            <lightning-layout>
+                <lightning-layout-item padding="around-small" size="9">
+                    <lightning-input type="text" label="New Todo" placeholder="New Todo" variant="label-hidden" onchange={handleChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="9">
+                    <lightning-button label="Add" variant="brand" onclick={addTodo}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </p>
+        <div slot="footer">
+            <template for:each={todoList} for:item="todo">
+                <c-todo-item key={todo.id} todo-item={todo.value} class="slds-p-around_small"></c-todo-item>
+            </template>
+        </div>
+    </lightning-card>
+</template>
